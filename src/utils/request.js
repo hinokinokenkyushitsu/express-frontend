@@ -4,8 +4,8 @@ import i18n from '@/i18n'
 import { syncServerTime } from '@/utils/clock'
 
 const request = axios.create({
-  baseURL: '/api',
-  timeout: 10000
+  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
+  timeout: 30000
 })
 
 // 请求拦截：自动带上 Token + 当前语言
